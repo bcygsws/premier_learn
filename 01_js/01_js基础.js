@@ -28,8 +28,8 @@
  * mouseover:鼠标指针进入某个特定元素（子元素）时，鼠标就会触发mouseover事件；当进入其个子元素时，会再次触发
  *
  * 事件对象的属性relatedTarget
- * mouseenter:relatedTarget属性指代的是离开之前的那个元素，如果relatedTarget为目标元素或者null时，不会冒泡
- * mouseover:relatedTarget属性指代的是从中（当前那个元素）离开的那个元素
+ * mouseenter: relatedTarget属性指代的是离开之前的那个元素，如果relatedTarget为目标元素或者null时，事件不会触发
+ * mouseover: relatedTarget属性指代的是从中（当前那个元素）离开的那个元素
  *
  *
  *
