@@ -31,6 +31,11 @@
  * mouseenter: relatedTarget属性指代的是离开之前的那个元素，如果relatedTarget为目标元素或者null时，事件不会触发
  * mouseover: relatedTarget属性指代的是从中（当前那个元素）离开的那个元素
  *
+ * 03-MessageChannel是什么？以及使用场景
+ * MessageChannel是HTML5中新加入的API，它可以实现两个独立环境（web workers 或者browsing context浏览器上下文）之间的双向通信的通道
+ *
+ * 04-async和await实现原理
+ *
  *
  *
  *
