@@ -35,6 +35,8 @@
  * MessageChannel是HTML5中新加入的API，它可以实现两个独立环境（web workers 或者browsing context浏览器上下文）之间的双向通信的通道
  *
  * 04-async和await实现原理
+ * 目的：解决回调地狱
+ * async和await实现:
  *
  *
  * */
