@@ -41,8 +41,7 @@
  * 仍然不够完美
  *
  * async--- await解决：
- * 完美解决
- *
+ * 为了解决promise的问题，ES2017（ES8）引入了async和await
  *
  *
  *
