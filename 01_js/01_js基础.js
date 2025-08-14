@@ -44,6 +44,14 @@
  * 为了解决promise的问题，ES2017（ES8）引入了async和await
  * async和await的实现原理:
  *
+ * generator
+ *
+ * thunk异步函数：作用是将包含回调函数和其他参数的函数，转换成只包含回调函数的函数
+ * 示例：
+ * const thunkSync=>fn=>(...args)=>callback=>fn(...args,callback)
+ * thunkSync函数只有一个回调函数参数fn
+ *
+ *
  *
  * */
 
