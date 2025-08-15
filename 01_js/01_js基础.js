@@ -44,13 +44,13 @@
  * 为了解决promise的问题，ES2017（ES8）引入了async和await
  * async和await的实现原理:
  *
- * generator
+ * generator函数：是协程在ES6中实现，协程简单说，就是多个线程相互协作，完成异步任务
+ * 是一个封装的异步任务，异步操作暂停的语句都yield进行标注,需要恢复时，用户使用next()方法恢复执行
  *
  * thunk异步函数：作用是将包含回调函数和其他参数的函数，转换成只包含回调函数的函数
  * 示例：
  * const thunkSync=>fn=>(...args)=>callback=>fn(...args,callback)
  * thunkSync函数只有一个回调函数参数fn
- *
  *
  *
  * */
