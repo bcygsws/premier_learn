@@ -52,6 +52,8 @@
  * const thunkSync=>fn=>(...args)=>callback=>fn(...args,callback)
  * thunkSync函数只有一个回调函数参数fn
  *
+ * co函数：
+ *
  * */
 
 
