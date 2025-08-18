@@ -52,7 +52,12 @@
  * const thunkSync=>fn=>(...args)=>callback=>fn(...args,callback)
  * thunkSync函数只有一个回调函数参数fn
  *
- * co函数：
+ * 三、co函数：
+ * 3.1 为generator函数写一个启动执行器很麻烦，co函数是generator函数的一个自启动执行器；
+ * 3.2 使用条件是：generator函数返回的是一个promise或者thunk函数
+ * 3.3 co函数执行完后，返回的是一个promise对象
+ *
+ *
  *
  * */
 
