@@ -27,6 +27,6 @@ const handler = {
 }
 const p = new Proxy(nestedObj, handler);
 
-// 验证：打印结果显示，普通对象被Proxy包装后，能够监听对象属性的引用了：打印结果：setting bar: 2
+// 验证：打印结果，普通对象被Proxy包装后，能够监听对象属性的引用了：打印结果：setting bar: 2
 // 包装后：nestedObj.foo.bar变成了p.foo.bar
 p.foo.bar = 2;// setting bar: 2
