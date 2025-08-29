@@ -2,7 +2,6 @@
  * @Proxy对象监听对象的引用
  * 代码分析
  *
- *
  * */
 const nestedObj = {
 	foo: {
