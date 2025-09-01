@@ -10,7 +10,9 @@ const nestedObj = {
 const handler = {
 	get(target, prop, receiver) {
 		const obj = Reflect.get(target, prop, receiver);
+		//Array.isArray(any类型值)，只有数组对象才会返回true
 		if (typeof obj === 'object' && obj !== null) {
+			// 返回一个关于handler的递归代理对象
 			return new Proxy(obj, handler);
 		}
 		console.log(`getting ${prop}:`, target[prop]);
