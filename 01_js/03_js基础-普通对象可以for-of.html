@@ -12,11 +12,54 @@
 	let a = [1, 2, 3, 4, 334, 895683];
 	console.dir(a);
 	// 为obj对象手动添加自己的迭代器，实现普通对象也能for……of，循环遍历
-	// 可迭代协议（MDN)：允许js对象定义或定制它们的迭代行为；要求内置类型是内置的可迭代对象，并且有可迭代行为
+	// 可迭代协议（MDN)：允许js对象定义或定制它们的迭代行为；要求内置类型是内置的可迭代对象，并且有可迭代行为;
+	// 例如：Map和Array,普通对象obj则无法使用for of
+
+	//let obj = {
+	//	name: '张三',
+	//	age: 18
+	//};
+	//添加自定义迭代器
 	let obj = {
 		name: '张三',
-		age: 18
+		age: 18,
+		[Symbol.iterator]() {
+			let index = 0;// index的增加后的值，每次next()后不会立即释放；而是将+1后最新值作为下一次next()的返回值
+			let keys = Object.keys(obj);// 获取对象所有的键名组成的数组
+			return {
+				next() {
+					if (index < keys.length) {
+						return {
+							value: obj[keys[index++]],
+							done: false // done: true 表示迭代结束；false 表示迭代未结束
+						}
+					}
+					return {
+						value: undefined,
+						done: true
+					}
+				}
+			}
+		}
 	};
+	// 3.1 添加自定义迭代器后，尝试for of遍历普通对象obj
+	// for of直接遍历普通对象的键值
+	// 对象键值对：张三
+	// 对象键值对：18
+	for (let item of obj) {
+		console.log(`对象键值对：${item}`);
+	}
+	// 3.2 再次尝试对添加自定义迭代器的普通对象obj进行解构赋值
+	let [name, age] = obj;
+	console.log(`普通对象解构赋值：${name}---${age}`);
+
+	// 3.3 对比普通对象的{}解构
+	let obj1 = {
+		weight: 801,
+		height: 180
+	};
+	let {weight, height} = obj1;
+	console.log(`对象解构赋值：${weight}---${height}`);// 对象解构赋值：80---180
 
 
 </script>
