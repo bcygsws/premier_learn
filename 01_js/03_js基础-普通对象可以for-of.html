@@ -70,8 +70,24 @@
 	/**
 	 * @Map的用法：
 	 * 参考：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy
+	 * 一、Map
+	 * 1.1 定义：Map对象保存键值对，并且能够保存键值对的原始插入顺序；键和值都可以是任何值（原始数据或者对象）
+	 * 二、Map的属性和方法
+	 * 2.1 get/set
+	 * 2.2 属性，size，键值对的个数
+	 *
+	 *
 	 *
 	 * */
+	let map = new Map();
+	map.set('name', '张三');
+	map.set('age', 18);
+	map.set('sex', '男');
+	console.log(`map对象的size属性：`, map.size);
+	console.log(`map对象get方法：`, map.get('name'));
+	map.set('age', 29);
+	console.log(`map对象get方法：age=`, map.get('age'));
+	console.log(`map对象set方法：sex=`, map.get('sex'));
 
 
 </script>
