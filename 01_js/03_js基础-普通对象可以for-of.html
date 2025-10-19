@@ -93,6 +93,16 @@
 		console.log(`map对象迭代：${key}---${value}`);
 	}
 	console.log(map);
+	console.log(`map是否有属性age:`, map.has('age'));// true
+
+	// 2.3 map属性，也可以跟对象一样设置属性，但是不能被查询到
+	let map1 = new Map();
+	map1['abc'] = 'abc';
+	map1['def'] = 'defg';
+	console.log(`map1对象属性：`, map1);
+	// 测试到size为0
+	console.log(`map1.size对象属性：`, map1.size);// 0
+	console.log(map1.has('abc'));//  false
 
 
 </script>
