@@ -8,6 +8,13 @@
  * 注：XHR XMLHttpRequest注入技术
  * 该机制是通过创建一个script的DOM元素，然后把XMLHttpRequest的响应注入到script中，来执行JavaScript.
  *
+ * readState的值
+ * 0‌：请求未初始化
+ * 1‌：服务器连接已建立
+ * 2‌：请求已接收
+ * 3‌：请求处理中
+ * 4‌：请求完成且响应就绪
+ *
  * */
 var xhrObj = getXHRObject;
 xhrObj.onreadystatechange = function () {
