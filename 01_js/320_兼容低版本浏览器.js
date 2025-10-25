@@ -8,7 +8,7 @@
  * 注：XHR XMLHttpRequest注入技术
  * 该机制是通过创建一个script的DOM元素，然后把XMLHttpRequest的响应注入到script中，来执行JavaScript.
  *
- * readState的值所代表含义：
+ * readState的不同值所代表含义：
  * 0‌：请求未初始化
  * 1‌：服务器连接已建立
  * 2‌：请求已接收
