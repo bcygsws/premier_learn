@@ -16,6 +16,16 @@
  *
  *
  **/
+// 3.1 变量未定义或者胡乱使用全局变量
+function def() {
+	b = 1;// 变量b没有声明
+}
+
+def();
+
+setTimeout(function () {
+	console.log(c);
+}, 2000)
 
 
 // 3.2 闭包的副作用未处理，就赋值为null;来触发GC来进行垃圾回收
@@ -29,3 +39,23 @@ function leak() {
 let res = leak();
 res();
 res = null;// 手动设置为null,GC（）会主动去回收
+
+// 3.3 事件监听后未移除
+function event() {
+	console.log('click');
+
+}
+
+function addEvent() {
+	const node = document.getElementById('wrap');
+	node.addEventListener('touchmove', event);
+}
+
+addEvent();// 添加事件监听
+// 在react框架中使用的钩子 （副作用函数）
+useEffect(() => {
+	const node = document.getElementById('wrap');
+	node.removeEventListener('touchmove', event);// 移除的事件还是event
+}, []);
+
+// 3.4 缓存，建议为所有缓存设置过期时间
